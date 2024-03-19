@@ -70,7 +70,7 @@ button {
         <input type="text" id="captcha" name="captcha">
         <br>
         <button type="submit">Giriş Yap</button>
-        <a href="./sifresifirlama.php">Şifrenizi mi unuttunuz?</a>
+        <a href="./sifresifirlama.php">Şifremi unuttum</a>
     </form>
 
     
