@@ -96,26 +96,33 @@ button {
 
             console.log(captchaID);
             document.querySelector("#captcha-image").src= captcha[captchaID].imageurl ;
-
+            $('#captcha-image').attr("data-label",captcha[captchaID].imageCode)
+            
             $('#loginForm').submit(function(e){
                 e.preventDefault();
                 var username = $('#username').val();
                 var password = $('#password').val();
                 var captchaInput = $('#captcha').val();
+                var captchaText = $('#captcha-image').attr("data-label");
+                
+                if(captchaInput==captchaText){
+                    $.ajax({
+                        type: 'POST',
+                        url: 'database/conf.php',
+                        data: {
+                            username: username,
+                            password: password,
+                            captcha: captchaInput
+                        },
+                        success: function(response){
+                            alert(response); 
+                        }
+                    });
 
+                }else{
+                    alert("Hatalı Kod Girdiniz!!!")
+                }
               
-                $.ajax({
-                    type: 'POST',
-                    url: 'database/conf.php',
-                    data: {
-                        username: username,
-                        password: password,
-                        captcha: captchaInput
-                    },
-                    success: function(response){
-                        alert(response); 
-                    }
-                });
             });
         });
     </script>
