@@ -1,0 +1,14 @@
+{
+  "aktivite": {
+    "gunler": ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"],
+    "aktivite_miktar": [50, 60, 45, 55, 70]
+  },
+  "kazanc": {
+    "aylar": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs"],
+    "kazanc_miktar": [5000, 6000, 4500, 5500, 7000]
+  },
+  "kur": {
+    "para_birimleri": ["USD", "EUR", "GBP", "JPY"],
+    "kazanc_oranlari": [4000, 300, 2000, 1000  ]
+  }
+}
