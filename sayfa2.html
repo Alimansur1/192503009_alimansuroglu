@@ -80,7 +80,7 @@
 
         <script>
         $(document).ready(function(){
-            // JSON verilerini çekme
+
             $.getJSON('veri.json', function(data){
                 var aktiviteGunler = data.aktivite.gunler;
                 var aktiviteMiktar = data.aktivite.aktivite_miktar;
@@ -89,7 +89,6 @@
                 var paraBirimleri = data.kur.para_birimleri;
                 var kazancOranlari = data.kur.kazanc_oranlari;
 
-                // Aktivite grafiği oluşturma
                 var activityData = [{
                     x: aktiviteGunler,
                     y: aktiviteMiktar,
@@ -99,7 +98,6 @@
                 }];
                 Plotly.newPlot('activityChart', activityData);
 
-                // Kazanç grafiği oluşturma
                 var incomeData = [{
                     x: kazancAylar,
                     y: kazancMiktar,
@@ -108,7 +106,6 @@
                 }];
                 Plotly.newPlot('incomeChart', incomeData);
 
-                // Kurlara göre ayrılmış grafiği oluşturma
                 var currencyData = [{
                     values: kazancOranlari,
                     labels: paraBirimleri,
