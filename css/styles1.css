@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Header'ın diğer öğelerin üstünde olmasını sağlar */
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px 0; /* Header yüksekliği kadar eklemek için üst boşluk */
+}
+
+.header-logo {
+    float: left;
+    margin-top: 10px;
+}
+
+.header-logo a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.header-nav {
+    float: right;
+}
+
+.header-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-menu li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.header-menu li:first-child {
+    margin-left: 0;
+}
+
+.header-menu li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.header-search {
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header-search input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.header-search button[type="submit"] {
+    background-color: #f2f2f2;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 90px; /* Header yüksekliği kadar kaydır */
+    left: 0;
+    width: 150px; /* Navbar width */
+    height: calc(100vh - 60px); /* Full height - header yüksekliği */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Menüyü dikey olarak genişlet */
+}
+
+.nav-item {
+    margin-bottom: 5px;
+}
+
+.nav-item a {
+    display: block;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.analytics-container{
+    margin-left: 200px;
+    position: relative;
+}
+.chart {
+    left: 50%;
+    transform: translateX(20%); /* Yatayda ortala */
+    width: 800px;
+    height: 600;
+    
+}
