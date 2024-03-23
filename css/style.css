@@ -220,3 +220,18 @@ main .insights > div span{
     color: var(--color-white);
     font-size: 12px;
 }
+main .insights > div.income span{
+    background:var(--color-succes);
+}
+main .insights > div.expenses span{
+    background:var(--color-danger);
+}
+main .insights > div middle{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+main .insights h3{
+    font-size:18px;
+
+}
