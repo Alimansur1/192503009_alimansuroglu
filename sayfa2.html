@@ -7,7 +7,20 @@
   <!-- jQuery kütüphanesi eklendi -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="./css/sitayil.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .container {
+      display: flex;
+    }
+
+    aside {
+      flex: 0 0 250px; /* Sidebar genişliği */
+    }
+
+    main {
+      flex-grow: 1; /* Main kısmının geri kalan alanı kaplaması */
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -103,7 +116,7 @@
           </a>
         </li>
         <li>
-          <a href="#" onclick="logoutFunction">
+          <a href="./sayfa1.html" onclick="logoutFunction()">
             <span class="material-symbols-outlined">
               Logout
             </span>
@@ -112,24 +125,107 @@
         </li>
       </ul>
     </aside>
-  </div>
+    <main>
+      <h1>Dashboard</h1>
+
+      <div class="date">
+        <input type="date">
+
+      </div>
+      <div class="insights">
+        <div class="sales">
+          <span class="material-symbols-outlined">
+            analytics
+            </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Sales</h3>
+              <h1>25,024</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38'cy=38 r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>%82</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last 24 hours</small>
+        </div>
+        <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+      
+        <div class="expences">
+          <span class="material-symbols-outlined">
+            bar_chart
+            </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Expences</h3>
+              <h1>14,160</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38'cy=38 r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>%82</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last 24 hours</small>
+        </div>
+
+      <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+
+        <div class="income">
+          <span class="material-symbols-outlined">
+            stacked_line_chart
+            </span>
+          <div class="middle">
+            <div class="left">
+              <h3>Total Income</h3>
+              <h1>25,456</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle cx='38'cy=38 r='36'></circle>
+              </svg>
+              <div class="number">
+                <p>%44</p>
+              </div>
+            </div>
+          </div>
+          <small class="text-muted">Last 24 hours</small>
+        </div>
+      </div>
+      </div>
+      
+
+    </main>
+
   <script>
     $(document).ready(function(){
-      // Dropdown menüleri gizle
+
       $('.dropdown-menu').hide();
-      
-      // Ana menü öğelerine tıklama olayı ekle
+
       $('.sidebar > li').click(function(){
-        // Tıklanan öğenin alt menüsünü bul
+
         var submenu = $(this).find('.dropdown-menu');
         
-        // Eğer alt menü varsa, göster/gizle
         if(submenu.length > 0){
           submenu.slideToggle();
         }
       });
     });
-    
+
+    function logoutFunction() {
+      // Burada logout işlemleri yapılabilir, örneğin:
+      // localStorage.clear(); // Yerel oturumu temizler
+      sessionStorage.clear(); // Geçici oturumu temizler
+      window.location.href = './sayfa1.html'; // Sunucu tarafında oturumu sonlandırır
+      alert('Çıkış yapıldı'); 
+    }
   </script>
 </body>
 </html>
